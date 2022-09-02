@@ -1,0 +1,145 @@
+{% extends 'ITBANK/base.html' %} 
+<title>{% block title %}Cuentas{% endblock %}| ITBANK</title>
+{% load static %} 
+
+{% block styleFiles %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'ITBANK/style/cuentas.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<main class="grid-main section-container">
+
+    <div class="caja1">
+    <h3>Cuentas</h3>
+    <div class="caja1-1">
+        <p> Abrir una nueva cuenta </p><img src="img/mas.png" alt="">
+
+    </div>
+
+
+    <div class="caja1-2">
+        <div class="caja-1-2--row">
+        <p>Caja de Ahorro pesos N°302-16334164/2</p>
+        <p>$1.000.000,87</p>
+        </div>
+
+        <div class="caja1-2--footer">
+        <div>
+            <p>Transferir</p>
+            <p>Hacer un plazo fijo</p>
+        </div>
+        <div>
+            <img src="img/menu.png" alt="">
+            <p>VOY A</p>
+        </div>
+        </div>
+    </div>
+    <div class="caja1-2">
+        <div class="caja-1-2--row">
+        <p>Caja Corriente pesos N°302-16334164/2</p>
+        <p>$1.000.000,87</p>
+        </div>
+
+        <div class="caja1-2--footer">
+        <div>
+            <p>Transferir</p>
+            <p>Hacer un plazo fijo</p>
+        </div>
+        <div>
+            <img src="img/menu.png" alt="">
+            <p>VOY A</p>
+        </div>
+        </div>
+    </div>
+    <!-- Agregar imagen para chat -->
+    </div>
+
+    <!-- NAVASIDE -->
+    <div class="caja2">
+    <h3>Matias Salvatierra</h3>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle white bg-primary " type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Datos del usuario
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button id="dropdown-item" class="dropdown-item" type="button">Datos personales</button></li>
+        <li><button id="dropdown-item" class="dropdown-item" type="button">CBU y Alias</button></li>
+        <li><button id="dropdown-item" class="dropdown-item" type="button">Mis claves</button></li>
+        <li><button id="dropdown-item" class="dropdown-item" type="button">Comprobantes</button></li>
+        <li><button id="dropdown-item" class="dropdown-item" type="button">Premios</button></li>
+
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Pagos
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Pagar servicios</button></li>
+        <li><button class="dropdown-item" type="button">Comprobantes de pago</button></li>
+        <li><button class="dropdown-item" type="button">cheques</button></li>
+        <li><button class="dropdown-item" type="button">Recargar</button></li>
+        <li><button class="dropdown-item" type="button">Servicios AFIP</button></li>
+        <li><button class="dropdown-item" type="button">Operaciones por SMS</button></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Transferencias
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Transferir</button></li>
+        <li><button class="dropdown-item" type="button">Comprobantes de transferencias</button></li>
+        <li><button class="dropdown-item" type="button">Limite de transferencias</button></li>
+        <li><button class="dropdown-item" type="button">Agenda de deestinatario</button></li>
+        <li><button class="dropdown-item" type="button">Transferencias programadas</button></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Resumenes y tarjetas
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Resumenes</button></li>
+        <li><button class="dropdown-item" type="button">Administrar resumenes</button></li>
+        <li><button class="dropdown-item" type="button">Tarjetas</button></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Operaciones internacionales
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Cobros internacionales</button></li>
+        <li><button class="dropdown-item" type="button">Pagos internacionales</button></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenu2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        MODO
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Enviar dinero</button></li>
+        <li><button class="dropdown-item" type="button">Pedir dinero</button></li>
+        <li><button class="dropdown-item" type="button">Ver Comprobantes</button></li>
+        <li><button class="dropdown-item" type="button">Configurar</button></li>
+        </ul>
+    </div>
+
+    </div>
+</main>
+{% endblock %}
+

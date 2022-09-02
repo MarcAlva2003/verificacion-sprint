@@ -1,0 +1,65 @@
+{% extends 'ITBANK/base.html' %}
+
+{% load static %}
+{% block styleFiles %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+  rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'ITBANK/style/home.css' %}">
+<link rel="stylesheet" href="{% static 'ITBANK/style/dolarcard.css' %}">
+{% endblock %}
+
+
+{% block title%} Home {% endblock %}
+
+{% block content %}
+<!-- MAIN -->
+<main class="main section-container">
+  <!--Publicidad superior-->
+  <div class="publicidad-principal">
+    <div class="contenedor">
+      <h3 class="titulo">¿Todavia no tenes tu tarjeta black ITBANK?</h3>
+      <p class="descripcion">Dale a +Info y enterate</p>
+      <a href="peditutarjeta.html"><button role="button" class="boton">
+          <i class="fa-solid fa-circle-info"></i>Más información
+        </button></a>
+      <!--El role button mejora accesibilidad-->
+    </div>
+  </div>
+
+  <!-- publicidad-inferior -->
+  <div class="publicidad-2">
+    <div class="contenedor">
+      <h3 class="titulo">¡Precio del Dólar hoy en Argentina!</h3>
+      <p class="descripcion">
+        Todas las cotizaciones para que estes bien Informado!
+      </p>
+      <button role="button" class="boton">
+        <i class="fa-solid fa-circle-info"></i>A continuacion tendras más información!
+      </button>
+      <!--El role button mejora accesibilidad-->
+    </div>
+  </div>
+
+
+  </div>
+</main>
+<!--Lo puse adentro de otro footer para que ocupe todo el width sin restricciones-->
+<footer>
+  <br>
+  <div>
+    <h2 class="titulo">Cotizaciones del dólar</h2>
+    <p class="actua" id="ult-fecha-dolar"></p>
+  </div>
+  <div id="dolars-container-javascrips" class="carta-container"></div>
+  <!--Para hacer mas facil el estilo del borde sin complicaciones-->
+  <h2 class="black"></h2>
+  <center>
+    <h2 class="coti">COTIZACIONES MEDIADAS POR EL BANCO CENTRAL DE LA REPUBLICA ARGENTNA</h2>
+    <a class="blac" href="http://www.bcra.gov.ar/">www.bcra.gov.ar</a>
+  </center>
+</footer>
+<br> <br> <br> <br> <br>
+
+<script src="https://kit.fontawesome.com/c301eb48e5.js" crossorigin="anonymous"></script>
+<script src="{% static 'ITBANK/js/fetch.js' %}"></script>
+{% endblock %}

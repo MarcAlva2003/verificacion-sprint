@@ -1,0 +1,59 @@
+{% extends 'ITBANK/base.html' %} 
+
+{% block title %}Registrarse{% endblock %}
+
+{% block styleFiles %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'ITBANK/style/register.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+        <div class="col bg">
+
+        </div>
+            <div class="col">
+                <div class="text-center">
+                    <img src="img/itbank-logo.png" width="150px" alt="">
+                </div>
+                <h2 class="fw-bold text-center pt-4 mg-4">Regístrate</h2>
+
+                <!-----LOGIN----->
+                <div class="formulario" >
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Nombre Completo</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                <div class="formulario" >
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo Electronico</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Crea una contraseña</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Confirme su contraseña</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" id="login-button" class="btn btn-primary">Registarte</button>
+                    </div>
+
+                    <div class="my-3 text-center">
+                        <span class="register"><a class="register" href="#">Registrate con Google</a></span> <br>
+                        <span class="register"><a class="register" href="#">Registrate con Facebook</a></span> <br>
+                        <span>¿Ya tienes cuenta?<a href="login.html">Iniciar sesion</a></span>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

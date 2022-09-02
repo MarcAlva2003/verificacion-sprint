@@ -1,0 +1,178 @@
+.main {
+    display: grid;
+
+}
+
+.main--item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.main-aside--item,
+.menu-main--item {
+    padding: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.09);
+    background-color: rgb(248, 248, 248);
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/*IMAGEN PRINCIPAL*/
+.publicidad-principal {
+    font-size: 16px;
+    min-height: 28.6em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5)0%, rgba(0, 0, 0, 0.5)50%), url(../img/mujer-tarjeta.jpg);
+    /*Pongo una transicion y luego la img*/
+    background-position: center center;
+    /*Centro la imagen tanto vertical como horizontalmente*/
+    background-size: cover;
+    /*Para que la imagen abarque
+    background-repeat: no-repeat;
+    el 100% disponible*/
+    margin-bottom: 3, 12em;
+    margin-top: 44px;
+    display: flex;
+    align-items: end;
+
+
+}
+
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+    font-size: 16px;
+}
+
+.publicidad-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.publicidad-principal .titulo {
+    font-weight: 600;
+    font-size: 2em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.publicidad-principal .descripcion {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.75em;
+    max-width: 45%;
+    margin-bottom: 1.25em;
+}
+
+.publicidad-principal .boton {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: 3s ease all;
+    font-size: 1.12em;
+}
+
+.publicidad-principal .boton i {
+    margin-right: 1.25em;
+}
+
+.publicidad-principal .boton:hover {
+    background: #fff;
+    color: #000;
+
+    @media (max-width: 768px) {
+        .main {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+}
+
+
+
+
+/* publicidad-2 */
+
+.publicidad-2 {
+    font-size: 16px;
+    min-height: 28.6em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5)0%, rgba(0, 0, 0, 0.5)50%), url(../img/hombreConCEl.jpeg);
+    /*Pongo una transicion y luego la img*/
+    background-position: center center;
+    /*Centro la imagen tanto vertical como horizontalmente*/
+    background-size: cover;
+    /*Para que la imagen abarque
+    background-repeat: no-repeat;
+    el 100% disponible*/
+    margin-bottom: 3, 12em;
+    margin-top: 44px ;
+    display: flex;
+    align-items: end;
+    
+    
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+    font-size: 16px;
+}
+
+.publicidad-2 .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.publicidad-2 .titulo {
+    font-weight: 600;
+    font-size: 2em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.publicidad-2 .descripcion {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.75em;
+    max-width: 45%;
+    margin-bottom: 1.25em;
+}
+
+.publicidad-2 .boton {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: 3s ease all;
+    font-size: 1.12em;
+}
+
+.publicidad-2 .boton i {
+    margin-right: 1.25em;
+}
+
+.publicidad-2 .boton:hover {
+    background: #fff;
+    color: #000;
+
+    @media (max-width: 768px) {
+        .main {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+}

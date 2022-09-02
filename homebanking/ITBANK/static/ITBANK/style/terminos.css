@@ -1,0 +1,24 @@
+.terminos-section{
+    margin-top: 60px;
+}
+.legal-section-container{
+    background-color: var(--background2);
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 7px;
+}
+.legal-section-container--titulo{
+    margin-bottom: 20px;
+}
+.legal-section-container--parrafo{
+    margin-bottom: 10px;
+}
+/*MEDIA QUERIES*/
+@media screen and (max-width: 800px) {
+    .pelicula-principal {
+        font-size: 14px;
+    }
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+{% extends 'ITBANK/base.html' %} 
+
+{% block title %}Perfil{% endblock %}
+
+{% block styleFiles %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'ITBANK/style/perfil.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+  <div class="main-container">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="150" height="150"
+      viewBox="0 0 24 24" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+    </svg>
+    <span class="name">{{Nombre y Apellido}}</span>
+    <a >{{username}}</a>
+    <span class="profile-text">Mi Perfil</span>
+    <div class="carta-container">
+      <div class="carta">
+        <span>Datos Personales</span>
+        <p>Configura tu domicilio, e-mail y teléfono de contacto</p>
+      </div>
+      <div class="carta">
+        <span>Usuario Itbank</span>
+        <p>Modificá el usuario de acceso a tu banca digital.</p>
+      </div>
+      <div class="carta">
+        <span>Clave y Usuario</span>
+        <p>En todo momento podés modificar tu clave y usuario</p>
+      </div>
+      <div class="carta">
+        <span>Aviso Itbank</span>
+        <p>Seleccioná y modificá las notificaciones a recibir por e-mail</p>
+      </div>
+      <div class="carta">
+        <span>Tu Sucursal</span>
+        <p>Tu sucursal principal es... </p>
+      </div>
+      <div class="carta">
+        <span>Clave Banelco</span>
+        <p>Generá o blanqueá tu clave numérica y/o alfabética Banelco.</p>
+      </div>
+      <div class="carta">
+        <span>Preguntas de Seguridad</span>
+        <p>Seleccioná y modificá en cualquier momento las preguntas que te ayudarán a recuperar tu clave.</p>
+      </div>
+      <div class="carta">
+        <span>Contratos y comisiones</span>
+        <p>Consultá todos tus contratos y comisiones del banco desde aquí.</p>
+      </div>
+      <div class="carta">
+        <span>Premios</span>
+        <p>Suscribite y recibi importantes Beneficios.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+
+{% endblock %}

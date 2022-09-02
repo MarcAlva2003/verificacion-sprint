@@ -1,0 +1,64 @@
+/*#009d71 ; #2ca880 ; #97bd9e ; #789dca ; #88a7d0*/
+
+.footer h4 {
+    padding: 10px 0 10px 0px ;
+}
+.footer2{
+    background-color: #88a7d0;
+}
+footer {
+    /* padding: 15px 0px 0px 0px; */
+    /* margin: 25px 0px 0px 0px; */
+    /*Color de fondo*/
+    color: rgba(255, 255, 255, 0.925);
+    background-color: #000;
+    /*Bordeamos el radio*/
+    /* border-radius: 0.5rem; */
+    margin-top: 100px;
+
+}
+a{
+    color: #fff !important;
+}
+a:hover{
+    color: rgb(126, 152, 255) !important;
+
+}
+
+#links{
+
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+#fondo {
+    /* margin: 15px 0px 0px 0px;
+    padding: 5px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #88a7d0 ;
+}
+.fondo-item{
+    width: 210px;
+}
+.text {
+    text-shadow: 1px;
+    color: #fff;
+}
+.links-column{
+    width: 210px;
+}
+.links-column--link{
+    margin-bottom: 3px;
+}
+@media (max-width: 768px){
+    #links,
+    #fondo{
+        flex-direction: column !important;
+    }
+    .links-column{
+        margin-bottom: 30px;
+    }
+    .fondo-item{
+        margin-bottom: 5px;
+    }
+}

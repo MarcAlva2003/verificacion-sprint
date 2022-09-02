@@ -1,0 +1,127 @@
+.grid-main {
+    /* height:350px; */
+    margin: 0;
+    display: grid;
+    grid-template-columns: 65% auto;
+    grid-gap: 0.5em;
+    grid-template-areas:
+        "caja1 caja2"
+
+
+}
+
+.caja1 {
+    margin: 0%;
+    padding-left: 5px;
+    margin-top: 10px;
+
+    display: grid;
+    grid-gap: 0.5em;
+
+    /* grid-template-rows: 10% 20% 20% auto; */
+    grid-template-areas:
+        "caja1"
+        "caja1-1"
+        "caja1-2"
+        "caja1-3"
+    ;
+}
+
+.dropdown-menu{
+    width: 100%;
+    text-align: center;
+}
+
+.caja2{
+    margin-top: 10px;
+}
+
+
+
+.caja1-1 {
+    background-color: #fff;
+    /* grid-area: caja1-1; */
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.caja1-1 img{
+    width: 18px;
+    height: 16px;
+    margin-right: 2%;
+}
+
+.caja1 p{
+margin-left: 2%;
+margin-right: 2%;
+}
+.caja1-2--footer p{
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja1-2 {
+    background-color: #fff;
+    /* grid-area: caja1-2; */
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 200px; */
+}
+
+.caja-1-2--row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-row {
+    justify-content: start;
+
+}
+
+.caja1-2--footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #ddd;
+    column-gap: 20px;
+}
+
+.caja1-3 {
+    background-color: #fff;
+    /* grid-area: caja1-3; */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown button {
+    width: 100% !important;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .grid-main {
+        height: 100vh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        grid-gap: 0.5em;
+        grid-template-areas:
+            "caja1"
+            "caja2"
+
+
+    }
+
+}

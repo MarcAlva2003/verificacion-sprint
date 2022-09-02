@@ -1,0 +1,103 @@
+{% extends 'ITBANK/base.html' %}
+<title>{% block title %}Prestamos{% endblock %}| ITBANK</title>
+
+{% block styleFiles %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'ITBANK/style/prestamos.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- --------------------------------- -->
+<!-- --------------BODY--------------- -->
+<!-- --------------------------------- -->
+<main class="hero section-container mt-5">
+    <div class="hero-background section-background">
+        <div class="hero-text hero-item">
+            <h1>Conseguí eso que tanto deseas</h1>
+            <div class="hero-text-paragraph">
+                <p>Sacá el monto y tiempo de devolución que mejor se adapte a vos.</p>
+                <p>Que el dinero no sea un problema.</p>
+            </div>
+            <a href="#formulario-prestamo"><button class="hero-text-button">Quiero un préstamo</button></a>
+        </div>
+        <div class="hero-image hero-item"></div>
+    </div>
+</main>
+
+<!-- PRESTAMOS -->
+<div class="loans section-container">
+    <div class="loans-background section-background">
+        <h2>Mis préstamos</h2>
+        <div class="loans-list">
+            {% if prestamos_db %}
+            <p>Prestamos: {{prestamos_db|length}} prestamos</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Total (ARS$)</th>
+                        <th scope="col">Cuotas</th>
+                        <th scope="col">Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for prestamo in prestamos_db %}
+                        <tr>
+                            <td>{{prestamo.loanType}}</td>
+                            <td>{{prestamo.loan_total}}</td>
+                            <td>{{prestamo.loan_month}}</td>
+                            <td>{{prestamo.loan_approved_date}}</td>
+                          </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            {% else %}
+            <p>Aún no tiene ningún prestamo</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+<!-- NUEVO PRESTAMO -->
+<div class="new-loan section-container" id="formulario-prestamo">
+    <div class="new-loan-background section-background">
+        <div class="new-loan-heading">
+            <h2>Pedir un préstamo</h2>
+            <p>Completá el formulario para solicitar un nuevo préstamo</p>
+        </div>
+        
+        <form class="new-loan-form" action="/prestamos/#formulario-prestamo" method="POST"> {% csrf_token %}   
+            <table>
+                {{form.as_p}}
+            </table>
+            <div class="input-submit">
+                <input class="input-submit-button" type="submit" value="Enviar solicitud">
+            </div>
+        </form>
+        {% if 'ok' in request.GET %}
+        <p class="text-success mt-3"><b>Se ha cargado la solicitud de prestamo. En caso de ser aprobado, lo contactaremos via mail</b></p>
+        {% endif %}
+        {% if 'amounterror' in request.GET %}
+        <p  class="text-danger mt-3">
+            <b>
+                El monto de dinero ingresado es mayor al que puede solicitar.
+            </b>
+        </p>
+        <p class="text-danger">
+            Mejore su tipo de cliente para poder solicitar prestamos de mayor cantidad
+        </p>
+        <p class="text-danger">
+            (Tipo de cliente que posee: {{client_type}})
+        </p>
+        {% endif %}
+        {% if 'errorblack' in request.GET %}
+        <p class="text-danger mt-3">
+            <b>
+                El monto de dinero ingresado es mayor al que puede solicitar.
+            </b>
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 50px 50px 50px;
+}
+.titulo{
+    flex-direction: column;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.footer {
+    margin-top: 0;
+}
+
+.name {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.profile-text {
+    font-size: medium;
+}
+
+.carta-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 45px 15vw;
+    width: 100%;
+    background-color: #88a7d0;
+
+
+}
+.black{
+    color: #000000;
+    background-color: #000000;
+}
+.carta {
+    /* flex-basis: 33.3%; */
+    display: flex;
+    flex-direction: column;
+    margin: 7px;
+    border-radius: 3px;
+    background-color: #000000;
+    border: 2px solid rgb(255, 255, 255);
+    min-width: 250px;
+    max-width: 350px;
+    align-items: center;
+}
+.coti{
+    color:#ffffff;
+} 
+
+#ult-fecha-dolar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+
+.text-success .text-card{
+    size: 500px;
+    text-decoration: dotted;
+}
+.carta span {
+    font-size: larger;
+    font-weight: 600;
+    color: #88a7d0;
+    background-color: ;
+    justify-content: center;
+    align-items: center;
+}
