@@ -40,7 +40,7 @@ class UserViewPrestamosPermission(permissions.BasePermission):
             request.user.is_authenticated and
             request.user.has_perm('prestamos.view_prestamos')
         )
-
+# Validar que un cliente tenga permiso para añadir prestamos
 class UserPostPrestamosPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return bool(
@@ -48,6 +48,7 @@ class UserPostPrestamosPermission(permissions.BasePermission):
             request.user.is_authenticated and
             request.user.has_perm('prestamos.add_prestamos')
         )
+# Validar que un cliente tenga permiso para eliminar prestamos
 class UserDeletePrestamosPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return bool(
@@ -112,7 +113,6 @@ class MontoPrestamosDeCliente(APIView):
             return Response(serializer.data, status= status.HTTP_200_OK)
         return Response(serializer.error_messages, status = status.HTTP_404_NOT_FOUND)
 
-
 # OBTENER PRESTAMO DE UNA SUCURSAL
 # Un empleado autenticado puede obtener el listado de préstamos otorgados de
 # una sucursal determinada.
@@ -139,7 +139,6 @@ class TarjetasCliente(APIView):
                 return Response(serializer.data, status= status.HTTP_200_OK)
             return Response(serializer.error_messages, status = status.HTTP_404_NOT_FOUND)
         return Response({"Fail": "Usted no tiene permiso para realizar esta acción."},status = status.HTTP_403_FORBIDDEN)
-
 
 # GENERAR UNA SOLICITUD DE PRESTAMO PARA UN CLIENTE
 # Un empleado autenticado puede solicitar un préstamo para un cliente, registrado 
@@ -217,174 +216,3 @@ class ListaSucursales(APIView):
         if sucursales:
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.error_messages, status = status.HTTP_404_NOT_FOUND)
-
-                # cuenta = Cuenta.objects.get( id = cliente_id).first()
-    # def delete(self,request, pk):
-    #     prestamo = Prestamo.objects.filter(pk=pk).first()
-    #     if prestamo:
-    #         serializer = PrestamoSerializer(prestamo)
-    #         # prestamo = Prestamo.objects.get(pk = pk)
-    #         cliente_id = prestamo.id_cliente
-    #         monto_descuento = prestamo.loan_total
-    #         monto_actual = cuenta.balance
-    #         monto_actualizado = monto_actual - monto_descuento
-    #         cuenta.balance = monto_actualizado
-    #         cuenta.save()
-    #         prestamo.delete()
-    #         return Response(serializer.data, status=status.HTTP_200_OK)
-        # return Response(status=status.HTTP_404_NOT_FOUND)
-
-
-
-# # BALANCE DE CUENTA DE CLIENTE
-# class BalanceDeCuentaDeCliente(APIView):
-#     def get(self, request):
-#         # usuario = User.objects.filter(pk = request.user.id).first()
-#         cuenta = Cuenta.objects.filter (user_email=request.user.email)
-#         print(request.user.email)
-#         # print(request.user.email)
-#         serializer = BalanceCuentaSerializer(cuenta, many = True)
-#         if cuenta:
-#             return Response(serializer.data, status= status.HTTP_200_OK)
-#         return Response(serializer.error_messages, status = status.HTTP_404_NOT_FOUND)
-
-# class ClienteLists(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
-#     def post(self, request, format=None):
-#         serializer = ClienteSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save(owner=self.request.user)
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#     def get(self, request): # nuevo
-#         cliente = clientes.objects.all().order_by('created_at')
-#         serializer = ClienteSerializer(cliente, many=True)
-#         if(cliente):
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(status=status.HTTP_401_UNAUTHORIZED)
-
-# class GetClientList(APIView):
-#     permission_classes = [permissions.IsAuthenticated]
-#     authentication_classes = [authentication.BasicAuthentication]
-#     def get(self, request): # nuevo
-#         cliente = clientes.objects.all().order_by('created_at')
-#         serializer = ClienteSerializer(cliente, many=True)
-#         if(cliente):
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(status=status.HTTP_401_UNAUTHORIZED)
-
-# class ClienteDetails(APIView):
-#     permission_classes = [UserHasViewPermission]
-#     def get(self, request, pk):
-#         cliente =clientes.objects.filter(pk=pk).first()
-        
-#         serializer = ClienteSerializer(cliente)
-#         if cliente:
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         else: 
-#             return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-#     def put(self, request, pk):
-#         print("Entrando a la actualizacion")
-#         cliente = clientes.objects.filter(pk=pk).first()
-#         serializer = ClienteSerializer(cliente, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# class UserList(generics.ListAPIView):
-#     permission_classes = [permissions.IsAuthenticated]
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-# #clase para manejar una única instancia
-# class UserDetail(generics.RetrieveAPIView):
-#     permission_classes = [permissions.IsAuthenticated]
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-
-
-# class SucursalLists(APIView):
-#     def post(self, request, format=None):
-#         serializer = SucursalSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-#     def get(self, request): # nuevo
-#         sucursales = Sucursal.objects.all().order_by('created_at')
-#         serializer = SucursalSerializer(sucursales, many=True)
-#         return Response(serializer.data, status=status.HTTP_200_OK)
-
-# # una sucursal
-# class SucursalDetails(APIView):
-#     def get(self, request, pk):
-#         sucursal = Sucursal.objects.filter(pk=pk).first()
-#         serializer = SucursalSerializer(sucursal)
-#         if sucursal:
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-# #una sucursal
-
-# class PrestamoList(APIView):
-    
-#     def post(self, request, format=None):
-#         serializer = PrestamoSerializer(data=request.data) 
-#         if serializer.is_valid(): 
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED) 
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# # def consultarSaldo(id):
-# #     conexion,cursor = conectar()
-# #     cursor.execute("SELECT id,account_id,balance,tipo_de_cuenta_id from Cuentas_cuenta")
-
-# #     for fila in cursor:
-# #         if fila[0] == id:
-# #             monto = fila[2]
-
-# #     conexion.close()
-
-# #     return monto
-
-
-# class PrestamoDetails(APIView):
-
-#     def delete(self,request, pk):
-#         #borra un prestamo con un id determinado
-#         prestamo = Prestamo.objects.filter(pk=pk).first()
-#         if prestamo:
-#             serializer = PrestamoSerializer(prestamo)
-            
-#             prestamo = Prestamo.objects.get(pk = pk)
-#             cliente_id = prestamo.id_cliente
-#             cuenta = Cuenta.objects.get( account_id = cliente_id)
-#             monto_descuento = prestamo.loan_total
-#             monto_actual = cuenta.balance
-#             monto_actualizado = monto_actual - monto_descuento
-#             cuenta.balance = monto_actualizado
-#             cuenta.save()
-
-#             prestamo.delete()
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(status=status.HTTP_404_NOT_FOUND)
-
-# # Tarjetas asociadas a un cliente
-
-
-
-
-
-# # OBTENER PRESTAMO DE UNA SUCURSAL
-# class MontoPrestamoSucursal(APIView):
-#     def get(self, request, sucursal_id):
-#         prestamo = Prestamo.objects.filter(id_sucursal=sucursal_id)
-        
-#         serializer = MontoPrestamosSucursalSerializer(prestamo, many = True)
-#         if prestamo:
-#             return Response(serializer.data, status= status.HTTP_200_OK)
-#         return Response(serializer.error_messages, status = status.HTTP_404_NOT_FOUND)

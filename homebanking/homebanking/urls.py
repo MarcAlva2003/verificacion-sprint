@@ -59,15 +59,6 @@ urlpatterns = [
     path('api/direccion-cliente/<int:pk>', DireccionClienteID.as_view()),
     path('api/direccion-cliente', EditarDireccionCliente.as_view()),
     path('api/sucursales',ListaSucursales.as_view()),
-    # path('testapi/users/', UserList.as_view()),
-    # path('testapi/users/<int:pk>/', UserDetail.as_view()),
-    # path('testapi/sucursales/',SucursalLists.as_view()),
-    # path('testapi/sucursales/<int:pk>/',SucursalDetails.as_view()),
-    # path('testapi/prestamopost/', PrestamoList.as_view()),
-    # path('testapi/prestamodelete/<int:pk>',PrestamoDetails.as_view()),
-    # path('testapi/montos-prestamo-cliente/<int:customer_id>',MontoPrestamosDeCliente.as_view()),
-    # path('testapi/balance-cliente/', BalanceDeCuentaDeCliente.as_view()),
-    # path('testapi/monto-prestamo-sucursal/<int:sucursal_id>', MontoPrestamoSucursal.as_view()),
 ]
 
 #agregue
