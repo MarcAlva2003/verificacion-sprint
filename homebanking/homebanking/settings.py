@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'api',
     'sucursales',
     'rest_framework',
-    'corsheaders',
 ]
 
 # REST_FRAMEWORK = {
@@ -67,7 +66,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ] 
 
 ROOT_URLCONF = 'homebanking.urls'
@@ -86,10 +84,6 @@ TEMPLATES = [
             ],
         },
     },
-]
-
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5500',
 ]
 
 WSGI_APPLICATION = 'homebanking.wsgi.application'
